@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,6 +71,7 @@
   </div>
   <div class="mobile-menu" id="mobileMenu" hidden>
     <a href="#about">About</a><a href="#services">Services</a><a href="#industries">Industries</a><a href="#process">How we work</a><a href="#compliance">Compliance</a><a href="#faq">FAQ</a>
+    <a href="tel:+971508216634">Call +971 50 821 6634</a><a href="https://wa.me/971508216634" target="_blank" rel="noopener">WhatsApp us</a>
     <a href="#contact" class="btn btn--primary">Book Free Consultation</a>
   </div>
 </header>
@@ -105,9 +106,11 @@
         <div><strong>VAT return filed</strong><small>On time · FTA compliant</small></div>
       </div>
       <div class="float-card float-card--b">
-        <small>VAT refunds processed</small>
-        <strong class="float-card__big">AED 2.41M</strong>
-        <div class="spark" aria-hidden="true"><i style="--h:30%"></i><i style="--h:45%"></i><i style="--h:38%"></i><i style="--h:60%"></i><i style="--h:52%"></i><i style="--h:74%"></i><i style="--h:68%"></i><i style="--h:92%"></i></div>
+        <small>Compliance calendar</small>
+        <strong>Upcoming deadlines</strong>
+        <div class="float-card__row"><b>VAT return</b><span>28 days after period</span></div>
+        <div class="float-card__row"><b>Corporate Tax</b><span>FY end + 9 months</span></div>
+        <div class="float-card__row"><b>Financial statements</b><span>January</span></div>
       </div>
     </div>
   </div>
@@ -135,7 +138,7 @@
   <div class="container about">
     <div class="about__media reveal">
       <img class="about__main" src="assets/img/Asco-3d-1024x683.jpg" alt="ASCO office" width="1024" height="683" loading="lazy">
-      <div class="about__badge"><strong>2018</strong><span>Supporting UAE businesses since</span></div>
+      <div class="about__badge"><span>Established</span><strong>2018</strong><span>Supporting UAE businesses ever since</span></div>
     </div>
     <div class="about__copy reveal">
       <span class="eyebrow">Who we are</span>
@@ -441,9 +444,20 @@
       <p>Whether you need bookkeeping, VAT support, corporate tax advisory, auditing, or strategic financial guidance, we’re here to help.</p>
     </div>
     <div class="cta__actions">
-      <a href="https://ascoaudit.com/contact" class="btn btn--light btn--lg">Book a consultation <svg class="ic"><use href="#i-arrow"/></svg></a>
-      <a href="tel:+971508216634" class="btn btn--ghost btn--lg"><svg class="ic"><use href="#i-phone"/></svg>Call ASCO</a>
-      <a href="https://wa.me/971508216634" class="btn btn--ghost btn--lg" target="_blank" rel="noopener"><svg class="ic ic--fill"><use href="#i-whatsapp"/></svg>WhatsApp us</a>
+      <form class="lead-form" id="leadForm">
+        <label>Your name<input name="name" required autocomplete="name" placeholder="Full name"></label>
+        <label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label>
+        <label class="full">Service needed
+          <select name="service">
+            <option>Accounting &amp; Bookkeeping</option><option>VAT &amp; Corporate Tax</option><option>Internal Audit</option><option>Inventory Management</option><option>Accounting Systems &amp; E-Invoicing</option><option>Valuation &amp; Due Diligence</option><option>Management Consultancy</option><option>CFO Services</option><option>Not sure yet</option>
+          </select></label>
+        <button class="btn btn--light btn--lg full" type="submit"><svg class="ic ic--fill"><use href="#i-whatsapp"/></svg>Book free consultation</button>
+        <small class="full">Opens WhatsApp with your details — our team replies fast.</small>
+      </form>
+      <div class="cta__alt">
+        <a href="tel:+971508216634" class="btn btn--ghost"><svg class="ic"><use href="#i-phone"/></svg>Call ASCO</a>
+        <a href="https://ascoaudit.com/contact" class="btn btn--ghost">Contact page <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
   </div>
 </section>

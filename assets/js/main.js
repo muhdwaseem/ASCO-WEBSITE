@@ -1,17 +1,19 @@
 (() => {
+  document.documentElement.classList.remove('no-js');
   const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 24);
+  const menu = document.getElementById('mobileMenu');
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 24 || !menu.hidden);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // Mobile menu
   const burger = nav.querySelector('.nav__burger');
-  const menu = document.getElementById('mobileMenu');
   const setMenu = (open) => {
     burger.setAttribute('aria-expanded', String(open));
     menu.hidden = !open;
-    nav.classList.toggle('is-scrolled', open || window.scrollY > 24);
+    onScroll();
   };
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); burger.focus(); } });
   burger.addEventListener('click', () => setMenu(menu.hidden));
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 
@@ -24,6 +26,7 @@
       t.tabIndex = on ? 0 : -1;
       document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
     });
+    tab.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
   };
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => select(t));
@@ -34,6 +37,15 @@
       const next = tabs[(i + d + tabs.length) % tabs.length];
       select(next); next.focus();
     });
+  });
+
+  // Lead form -> WhatsApp with a prefilled message
+  const form = document.getElementById('leadForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const msg = "Hello ASCO, I'd like to book a free consultation.\nName: " + d.get('name') + "\nCompany: " + (d.get('company') || '-') + "\nService: " + d.get('service');
+    window.open('https://wa.me/971508216634?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
