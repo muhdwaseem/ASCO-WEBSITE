@@ -99,19 +99,47 @@
     </div>
     <div class="hero__visual">
       <div class="hero__frame">
-        <img src="assets/img/Reliable-1024x1024.jpg" alt="ASCO services — accounting, VAT & corporate tax, audit, reporting, advisory and compliance — around the Dubai skyline" width="1024" height="1024">
+        <div class="dash" role="img" aria-label="Illustration of an ASCO client finance overview: cash flow, reconciled books, compliance status and filing timeline">
+          <div class="dash__bar">
+            <span class="dash__dots"><i></i><i></i><i></i></span>
+            <span class="dash__title">Client finance overview</span>
+            <span class="dash__live"><span class="pill__dot"></span>Live</span>
+          </div>
+          <div class="dash__grid">
+            <div class="dcard dcard--wide">
+              <div class="dcard__head"><span>Cash flow</span><em class="chip chip--green">Healthy</em></div>
+              <svg class="dchart" viewBox="0 0 320 110" preserveAspectRatio="none">
+                <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1688C7" stop-opacity=".28"/><stop offset="1" stop-color="#1688C7" stop-opacity="0"/></linearGradient></defs>
+                <path class="dchart__grid" d="M0 27H320M0 55H320M0 83H320"/>
+                <path class="dchart__area" d="M0 88 C30 84 45 70 70 72 S115 60 135 58 S175 66 195 50 S240 30 260 34 S300 18 320 12 V110 H0Z" fill="url(#dg)"/>
+                <path class="dchart__line" pathLength="1" d="M0 88 C30 84 45 70 70 72 S115 60 135 58 S175 66 195 50 S240 30 260 34 S300 18 320 12"/>
+                <circle class="dchart__dot" cx="320" cy="12" r="4"/>
+              </svg>
+              <div class="dchart__months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+            </div>
+            <div class="dcard">
+              <div class="dcard__head"><span>Books reconciled</span></div>
+              <strong class="dcard__big">100%</strong>
+              <div class="dbar"><i></i></div>
+              <small class="dcard__note">Bank · Payroll · Payables</small>
+            </div>
+            <div class="dcard dcard--ring">
+              <svg class="dring" viewBox="0 0 44 44"><circle cx="22" cy="22" r="18"/><circle class="dring__val" cx="22" cy="22" r="18"/><path class="dring__ok" d="M15 22.5l4.5 4.5 9-9.5"/></svg>
+              <div><span class="dcard__label">Compliance</span><strong>All clear</strong><small class="dcard__note">VAT · CT · AML</small></div>
+            </div>
+            <div class="dcard dcard--wide dlist">
+              <div class="dlist__row"><span class="dlist__ic"><svg class="ic"><use href="#i-receipt"/></svg></span><span>VAT return</span><em class="chip chip--green">Filed</em></div>
+              <div class="dlist__row"><span class="dlist__ic"><svg class="ic"><use href="#i-scale"/></svg></span><span>Corporate Tax return</span><em class="chip chip--blue">In review</em></div>
+              <div class="dlist__row"><span class="dlist__ic"><svg class="ic"><use href="#i-search"/></svg></span><span>Audited financials</span><em class="chip">Scheduled</em></div>
+            </div>
+          </div>
+          <svg class="dash__skyline" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70V52h30v-8h18v8h22V36h14v16h26V40l8-6 8 6v12h20V30h16v22h18V44h24v8h16V20l6-4 6 4v32h14V38h10v14h18V10l4-4 3-4 1-2 1 2 3 4 4 4v42h16V34h20v18h12V26l10-6 10 6v26h22V42h16v10h20V30c8 0 14 6 14 14v8h20V40h18v12h26V46h20v24z"/></svg>
+        </div>
       </div>
       <div class="stamp" aria-hidden="true"><span>FTA</span>Compliant<small>ASCO · Verified</small></div>
       <div class="float-card float-card--a">
         <span class="float-card__icon float-card__icon--green"><svg class="ic"><use href="#i-check"/></svg></span>
         <div class="ledger"><strong>VAT return filed</strong><small>On time · FTA compliant</small></div>
-      </div>
-      <div class="float-card float-card--b">
-        <small>Compliance calendar</small>
-        <strong>Upcoming deadlines</strong>
-        <div class="float-card__row"><b>VAT return</b><span>28 days after period</span></div>
-        <div class="float-card__row"><b>Corporate Tax</b><span>FY end + 9 months</span></div>
-        <div class="float-card__row"><b>Financial statements</b><span>January</span></div>
       </div>
     </div>
   </div>
