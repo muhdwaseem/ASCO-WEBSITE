@@ -50,7 +50,55 @@
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // ===== Business animations =====
+  document.querySelectorAll('.svc__chart i').forEach((b, i) => b.style.setProperty('--n', i));
+  document.querySelectorAll('.pains li').forEach((li, i) => li.style.setProperty('--i', i));
+  document.querySelectorAll('.calendar li').forEach((li, i) => li.style.setProperty('--i', i));
+  document.querySelector('.hero__frame')?.classList.add('is-stamped');
+
+  // Live bookkeeping feed in the hero card
+  const card = document.querySelector('.float-card--a');
+  const ledger = card?.querySelector('.ledger');
+  const feed = [
+    ['VAT return filed', 'On time · FTA compliant'],
+    ['Bank reconciliation', 'All accounts matched'],
+    ['Month-end close', 'Management reports delivered'],
+    ['Corporate Tax return', 'Prepared & reviewed'],
+    ['Books up to date', 'Audit-ready records'],
+  ];
+  if (ledger && !reduced) {
+    let k = 0;
+    card.classList.add('is-ticking');
+    setInterval(() => {
+      ledger.classList.add('is-out');
+      card.classList.remove('is-ticking');
+      setTimeout(() => {
+        k = (k + 1) % feed.length;
+        ledger.querySelector('strong').textContent = feed[k][0];
+        ledger.querySelector('small').textContent = feed[k][1];
+        ledger.classList.remove('is-out');
+        void card.offsetWidth;
+        card.classList.add('is-ticking');
+      }, 320);
+    }, 3200);
+  }
+
+  // Process timeline fills as you scroll
+  const steps = document.querySelector('.steps');
+  const stepItems = steps ? [...steps.querySelectorAll('.step')] : [];
+  const onSteps = () => {
+    if (!steps) return;
+    const r = steps.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight * 0.8 - r.top) / Math.max(r.height * 0.9, innerHeight * 0.45)));
+    steps.style.setProperty('--p', p.toFixed(3));
+    stepItems.forEach((st, i) => st.classList.toggle('is-active', p >= i / (stepItems.length - 1) - 0.02));
+  };
+  let ticking = false;
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { onSteps(); ticking = false; }); } }, { passive: true });
+  onSteps();
+
   // Count-up numbers
+  const pains = document.querySelector('.pains');
   const countUp = (el) => {
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.decimals || '0', 10);
@@ -84,4 +132,12 @@
     io.observe(el);
   });
   document.querySelectorAll('.stats [data-count]').forEach((el) => io.observe(el));
+
+  // Challenges flip to "Solved" once the list is well in view
+  if (pains) {
+    const po = new IntersectionObserver(([en]) => {
+      if (en.isIntersecting) { setTimeout(() => pains.classList.add('is-solved'), reduced ? 0 : 700); po.disconnect(); }
+    }, { threshold: 0.6 });
+    po.observe(pains);
+  }
 })();

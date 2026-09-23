@@ -101,9 +101,10 @@
       <div class="hero__frame">
         <img src="assets/img/Reliable-1024x1024.jpg" alt="ASCO services — accounting, VAT & corporate tax, audit, reporting, advisory and compliance — around the Dubai skyline" width="1024" height="1024">
       </div>
+      <div class="stamp" aria-hidden="true"><span>FTA</span>Compliant<small>ASCO · Verified</small></div>
       <div class="float-card float-card--a">
         <span class="float-card__icon float-card__icon--green"><svg class="ic"><use href="#i-check"/></svg></span>
-        <div><strong>VAT return filed</strong><small>On time · FTA compliant</small></div>
+        <div class="ledger"><strong>VAT return filed</strong><small>On time · FTA compliant</small></div>
       </div>
       <div class="float-card float-card--b">
         <small>Compliance calendar</small>
@@ -228,12 +229,12 @@
       <h2 class="h2">Any of these <em>familiar?</em></h2>
       <p class="lead">You are not alone. These are the most common financial challenges UAE business owners face every day.</p>
       <ul class="pains">
-        <li><svg class="ic"><use href="#i-x"/></svg>Bookkeeping is falling behind</li>
-        <li><svg class="ic"><use href="#i-x"/></svg>VAT deadlines feel stressful</li>
-        <li><svg class="ic"><use href="#i-x"/></svg>No in-house finance team</li>
-        <li><svg class="ic"><use href="#i-x"/></svg>Financial reports are difficult to understand</li>
-        <li><svg class="ic"><use href="#i-x"/></svg>Corporate Tax requirements seem confusing</li>
-        <li><svg class="ic"><use href="#i-x"/></svg>Compliance concerns keep you awake at night</li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">Bookkeeping is falling behind</span><em class="pains__tag">Solved</em></li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">VAT deadlines feel stressful</span><em class="pains__tag">Solved</em></li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">No in-house finance team</span><em class="pains__tag">Solved</em></li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">Financial reports are difficult to understand</span><em class="pains__tag">Solved</em></li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">Corporate Tax requirements seem confusing</span><em class="pains__tag">Solved</em></li>
+        <li><span class="pains__ic"><svg class="ic ic--x"><use href="#i-x"/></svg><svg class="ic ic--ok"><use href="#i-check"/></svg></span><span class="pains__txt">Compliance concerns keep you awake at night</span><em class="pains__tag">Solved</em></li>
       </ul>
     </div>
     <div class="solution reveal">
@@ -333,7 +334,7 @@
       <h2 class="h2">How we <em>work</em></h2>
       <p class="lead">A simple, transparent process designed to get you results without the hassle.</p>
     </div>
-    <ol class="steps">
+    <ol class="steps"><li class="steps__bar" aria-hidden="true"></li>
       <li class="step reveal"><span class="step__n">1</span><svg class="ic"><use href="#i-ear"/></svg><h3>We Listen</h3><p>We start by understanding your business, challenges, and goals.</p></li>
       <li class="step reveal"><span class="step__n">2</span><svg class="ic"><use href="#i-search"/></svg><h3>We Review</h3><p>Our team thoroughly reviews your current financial position.</p></li>
       <li class="step reveal"><span class="step__n">3</span><svg class="ic"><use href="#i-bulb"/></svg><h3>We Recommend</h3><p>We provide clear, actionable recommendations tailored to you.</p></li>
@@ -381,19 +382,19 @@
         <li>VAT Compliance</li><li>Corporate Tax Compliance</li><li>AML Support</li><li>Financial Reporting Standards</li><li>Internal Controls</li><li>Audit Readiness</li>
       </ul>
       <div class="metrics">
-        <div class="metric"><strong><span data-count="99.8" data-decimals="1">99.8</span>%</strong><h3>VAT filings</h3><p>On-time submission</p></div>
-        <div class="metric"><strong><span data-count="94">94</span>%</strong><h3>Client retention</h3><p>Annual renewal rate</p></div>
-        <div class="metric"><strong><span data-count="100">100</span>%</strong><h3>Audit pass</h3><p>Clean audit reports</p></div>
-        <div class="metric"><strong>A1+</strong><h3>Compliance</h3><p>Regulatory standing</p></div>
+        <div class="metric"><strong><span data-count="99.8" data-decimals="1">99.8</span>%</strong><h3>VAT filings</h3><p>On-time submission</p><span class="metric__bar" style="--v:.998" aria-hidden="true"></span></div>
+        <div class="metric"><strong><span data-count="94">94</span>%</strong><h3>Client retention</h3><p>Annual renewal rate</p><span class="metric__bar" style="--v:.94" aria-hidden="true"></span></div>
+        <div class="metric"><strong><span data-count="100">100</span>%</strong><h3>Audit pass</h3><p>Clean audit reports</p><span class="metric__bar" style="--v:1" aria-hidden="true"></span></div>
+        <div class="metric"><strong>A1+</strong><h3>Compliance</h3><p>Regulatory standing</p><span class="metric__bar" style="--v:1" aria-hidden="true"></span></div>
       </div>
     </div>
     <aside class="calendar reveal" aria-label="Compliance calendar">
       <div class="calendar__head"><svg class="ic"><use href="#i-calendar"/></svg><h3>Compliance calendar</h3></div>
       <ul>
-        <li><span class="calendar__date">JAN</span><div><strong>Annual Financial Statements</strong><small>Year-end close &amp; statutory reporting</small></div></li>
-        <li><span class="calendar__date">Quarterly</span><div><strong>VAT Returns</strong><small>Due by the 28th day after each tax period</small></div></li>
-        <li><span class="calendar__date">FY + 9m</span><div><strong>Corporate Tax Return</strong><small>Filed within 9 months of financial year end</small></div></li>
-        <li><span class="calendar__date">Ongoing</span><div><strong>AML Reporting</strong><small>Registrations, screening &amp; record-keeping</small></div></li>
+        <li><span class="calendar__date">JAN</span><div><strong>Annual Financial Statements</strong><small>Year-end close &amp; statutory reporting</small></div><span class="tick" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></li>
+        <li><span class="calendar__date">Quarterly</span><div><strong>VAT Returns</strong><small>Due by the 28th day after each tax period</small></div><span class="tick" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></li>
+        <li><span class="calendar__date">FY + 9m</span><div><strong>Corporate Tax Return</strong><small>Filed within 9 months of financial year end</small></div><span class="tick" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></li>
+        <li><span class="calendar__date">Ongoing</span><div><strong>AML Reporting</strong><small>Registrations, screening &amp; record-keeping</small></div><span class="tick" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span></li>
       </ul>
       <a href="#contact" class="btn btn--primary btn--block">Never miss a deadline</a>
     </aside>
