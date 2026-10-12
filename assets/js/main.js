@@ -41,11 +41,23 @@
 
   // Lead form -> WhatsApp with a prefilled message
   const form = document.getElementById('leadForm');
+  const serviceSelect = form?.querySelector('select[name="service"]');
+  // /contact/?service=vat-corporate-tax preselects the service the visitor came from
+  const wanted = new URLSearchParams(location.search).get('service');
+  if (serviceSelect && wanted) {
+    const opt = [...serviceSelect.options].find((o) => o.value === wanted);
+    if (opt) serviceSelect.value = opt.value;
+  }
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const d = new FormData(form);
-    const msg = "Hello ASCO, I'd like to book a free consultation.\nName: " + d.get('name') + "\nCompany: " + (d.get('company') || '-') + "\nService: " + d.get('service');
-    window.open('https://wa.me/971508216634?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    const service = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : '-';
+    const lines = ["Hello ASCO, I'd like to book a free consultation.", 'Name: ' + d.get('name'), 'Company: ' + (d.get('company') || '-')];
+    if (d.get('phone')) lines.push('Phone: ' + d.get('phone'));
+    if (d.get('email')) lines.push('Email: ' + d.get('email'));
+    lines.push('Service: ' + service);
+    if (d.get('message')) lines.push('Message: ' + d.get('message'));
+    window.open('https://wa.me/971508216634?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
   });
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

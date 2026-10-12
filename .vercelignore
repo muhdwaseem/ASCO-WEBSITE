@@ -1,3 +1,5 @@
 .claude/
 .playwright-mcp/
 .git/
+.scrape/
+tools/
